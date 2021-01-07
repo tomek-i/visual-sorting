@@ -1,0 +1,14 @@
+.bar {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  transition: 125ms ease-in-out;
+  background-color: aquamarine;
+  color: black;
+  padding: 5px;
+}
+
+.bar-value {
+  margin: 0 auto 0.25rem;
+}
