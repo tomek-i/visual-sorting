@@ -3,11 +3,10 @@
   flex-direction: column;
 
   align-items: center;
-  transition: 125ms ease-in-out;
-  background-color: aquamarine;
-  color: black;
+  transition: 250ms ease-in-out;
+  background-color: var(--bar-color);
 }
 
-.bar-value {
-  margin: 0 auto 0.25rem;
+.bar:hover {
+  background-color: var(--bar-color-hover);
 }

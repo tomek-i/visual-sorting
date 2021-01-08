@@ -1,3 +1,9 @@
+:root {
+  --backdrop-color: rgb(207, 207, 207);
+  --bar-color: rgb(109, 177, 253);
+  --bar-color-hover: rgba(109, 177, 253, 0.6);
+  --backdrop-width: 60%;
+}
 body {
   margin: 0;
   padding: 0;

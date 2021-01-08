@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import useSticky from "./hooks/useSticky.js";
+
 import { NavigationBar } from "./components/molecules/NavigationBar";
 import { Bar } from "./components/atoms/Bar";
 
@@ -13,7 +13,6 @@ import { useEffect, useState } from "react";
 export const App = (props) => {
   const ALGORITHM = ["Bubble Sort"];
 
-  const { isSticky, element } = useSticky();
   const [algorithm, setAlgorithm] = useState(null);
   const [arraySize, setArraySize] = useState(10);
   const [array, setArray] = useState([]);
@@ -69,7 +68,7 @@ export const App = (props) => {
         items={ALGORITHM}
         sticky={true}
         logo={logo}
-        sticky={isSticky}
+        sticky={true}
         arraySizes={[5, 10, 25, 50, 100]}
         onArrayChange={handleArraySizeChange}
       />
