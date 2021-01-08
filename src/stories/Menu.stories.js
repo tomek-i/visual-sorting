@@ -10,22 +10,13 @@ export default {
 const Template = (args) => <Menu {...args} />;
 
 export const Default = Template.bind({});
+export const WithOpenSubmenu = Template.bind({});
 
 Default.args = {
+  text: "Menu Name",
+};
+WithOpenSubmenu.args = {
+  ...Default.args,
   open: true,
-  placeholder: "Sort Algorithm",
-  items: [
-    "Bubble Sort",
-    "Selection Sort",
-    "Insertion Sort",
-    "Merge Sort",
-    "Quick Sort",
-    "Quick Sort 3",
-    "Heap Sort",
-    "Shell Sort",
-  ],
-  onSelect: (item) => {
-    Default.args["selected"] = item;
-    console.log(Default.args);
-  },
+  items: ["1 Item", "2 Item", "3 Item", "4 Item", "5 Item"],
 };

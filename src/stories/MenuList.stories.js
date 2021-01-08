@@ -13,17 +13,5 @@ export const Default = Template.bind({});
 
 Default.args = {
   open: true,
-  items: [
-    "Bubble Sort",
-    "Selection Sort",
-    "Insertion Sort",
-    "Merge Sort",
-    "Quick Sort",
-    "Quick Sort 3",
-    "Heap Sort",
-    "Shell Sort",
-  ],
-  onSelect: (item) => {
-    console.log("clicked: ", item);
-  },
+  items: ["1 Item", "2 Item", "3 Item"],
 };

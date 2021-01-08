@@ -4,7 +4,7 @@ import "./style.css";
 
 export const Button = (props) => {
   const [href, setHref] = useState(props.href || null);
-  const [text, setText] = useState(props.text || "");
+
   const [disabled, setDisabled] = useState(props.disabled || false);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export const Button = (props) => {
         className={`button ${disabled ? "disabled" : ""}`}
         disabled={disabled}
       >
-        <span className="button-label">{text}</span>
+        <span className="button-label">{props.text}</span>
       </a>
     );
   }
@@ -30,7 +30,7 @@ export const Button = (props) => {
       className={`button ${disabled ? "disabled" : ""}`}
       disabled={disabled}
     >
-      <span className="button-label">{text}</span>
+      <span className="button-label">{props.text}</span>
     </button>
   );
 };
