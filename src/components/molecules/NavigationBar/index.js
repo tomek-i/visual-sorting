@@ -9,17 +9,19 @@ export const NavigationBar = ({
   items,
   arraySizes,
   onArrayChange,
+  onAlgorithmChange,
 }) => {
   return (
-    <nav className={sticky ? "navbar navbar-sticky" : "navbar"}>
+    <nav className={"navbar"}>
       <div className="navbar--logo-holder">
-        {sticky ? <img src={logo} alt={logo} className="navbar--logo" /> : null}
-        <h1> Stick'Me</h1>
+        <img src={logo} alt={logo} className="navbar--logo" />
+        <h1>Title</h1>
       </div>
       <MainControl
         items={items}
         arraySizes={arraySizes}
         onArrayChange={onArrayChange}
+        onAlgorithmChange={onAlgorithmChange}
       />
     </nav>
   );

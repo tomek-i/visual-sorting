@@ -1,10 +1,10 @@
 import React from "react";
 
-import { Button } from "../components/atoms/Button";
+import { Button } from "../../components/atoms/Button";
 
 export default {
   component: Button,
-  title: "Button",
+  title: "Atoms/Button",
 };
 
 const Template = (args) => <Button {...args} />;

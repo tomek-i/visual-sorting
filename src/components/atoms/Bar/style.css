@@ -5,8 +5,20 @@
   align-items: center;
   transition: 250ms ease-in-out;
   background-color: var(--bar-color);
+  flex: 1;
+  margin-right: 0.5%;
 }
-
+.bar-color-1 {
+  background-color: red;
+}
+.bar-color-2 {
+  background-color: purple;
+}
+.bar:last-child {
+  margin-right: 0;
+}
+.bar > .bar-value {
+}
 .bar:hover {
   background-color: var(--bar-color-hover);
 }

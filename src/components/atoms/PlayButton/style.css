@@ -1,0 +1,26 @@
+.play-button-outer {
+  /* --size: 5em;
+
+  width: var(--size);
+  height: var(--size);*/
+  background-color: rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+}
+.play-button-outer:not(:last-child) {
+  margin-right: 5px;
+}
+.play-button {
+  opacity: 0.75;
+}
+
+.play-button-outer:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.play-button-outer:hover .play-button {
+  opacity: 1;
+}

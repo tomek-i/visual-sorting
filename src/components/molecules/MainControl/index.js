@@ -7,7 +7,13 @@ import { Button } from "../../atoms/Button";
 export const MainControl = (props) => {
   return (
     <section className="menu-section">
-      <Menu items={props.items} />
+      <Menu
+        text="Select Algorithm"
+        items={props.items}
+        onItemClick={(item) => {
+          props.onAlgorithmChange(item);
+        }}
+      />
       <Menu
         text="Array Size"
         items={props.arraySizes}

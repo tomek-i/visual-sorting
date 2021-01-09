@@ -4,7 +4,7 @@ import "./style.css";
 
 import { Button } from "../../atoms/Button";
 
-export const MenuList = ({ open, items, onItemClick }) => {
+export const MenuDropDown = ({ open, items, onItemClick }) => {
   return open ? (
     <ul className="menu-list">
       {items.map((item, i) => (
@@ -47,7 +47,7 @@ export const Menu = (props) => {
             text={text}
           />
         </header>
-        <MenuList
+        <MenuDropDown
           open={open}
           items={props.items}
           onItemClick={(e, item) => {

@@ -1,17 +1,15 @@
 import React from "react";
-import logo from "../logo.svg";
-import { NavigationBar } from "../components/molecules/NavigationBar";
-//import useSticky from "../hooks/useSticky.js";
+import logo from "../../logo.svg";
+import { NavigationBar } from "../../components/molecules/NavigationBar";
 
 export default {
   component: NavigationBar,
-  title: "NavigationBar",
+  title: "Organism/NavigationBar",
 };
 
 const Template = (args) => <NavigationBar {...args} />;
 
 export const Default = Template.bind({});
-//const { isSticky, element } = useSticky();
 Default.args = {
   sticky: true,
   open: true,

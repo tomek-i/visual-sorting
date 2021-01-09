@@ -1,37 +1,37 @@
 export const newStepHistory = (array) => {
   return [
     {
-      array: [...array],
+      numbers: [...array],
       colorGroup1: [],
       colorGroup2: [],
       colorGroup3: [],
       colorGroup4: [],
-      sortedArray: [],
+      sortedIndicies: [],
     },
   ];
 };
 
 export const addToStepHistory = (
   steps,
-  array,
-  sortedArray = [],
+  numbers,
+  sortedIndicies = [],
   colorGroup1 = [],
   colorGroup2 = [],
   colorGroup3 = [],
   colorGroup4 = []
 ) => {
   steps.push({
-    array: [...array],
+    numbers: [...numbers],
     colorGroup1: [...colorGroup1],
     colorGroup2: [...colorGroup2],
     colorGroup3: [...colorGroup3],
     colorGroup4: [...colorGroup4],
-    sortedArray: [...sortedArray],
+    sortedIndicies: [...sortedIndicies],
   });
 };
 
 export const lastSorted = (steps) => {
-  return steps[steps.length - 1].sortedArray;
+  return steps[steps.length - 1].sortedIndicies;
 };
 
 export const swap = (array, a, b) => {

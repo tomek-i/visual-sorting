@@ -1,10 +1,10 @@
 import React from "react";
 
-import { Menu, MenuList } from "../components/molecules/Menu";
+import { Menu, MenuDropDown } from "../../components/molecules/Menu";
 
 export default {
   component: Menu,
-  title: "Menu",
+  title: "Molecules/Menu/Menu",
 };
 
 const Template = (args) => <Menu {...args} />;

@@ -4,10 +4,12 @@ import {
   addToStepHistory,
   lastSorted,
   setActionNames,
-  swap
+  swap,
 } from "./util";
 
 const BubbleSort = (numbers) => {
+  if (!numbers) return;
+
   const steps = newStepHistory(numbers);
 
   for (let i = 0; i < numbers.length; i++) {
@@ -27,6 +29,7 @@ const BubbleSort = (numbers) => {
       numbers.length - 1 - i,
     ]);
   }
+  return steps;
 };
 
 export const BubbleSortActions = setActionNames("Comparing", "Swapping");
