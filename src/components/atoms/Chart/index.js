@@ -10,7 +10,7 @@ const generateBars = (props) => {
   const colB = props.currentStep ? props.currentStep.colorGroup2 : null;
   const colC = props.currentStep ? props.currentStep.colorGroup3 : null;
   const colD = props.currentStep ? props.currentStep.colorGroup4 : null;
-  const sortedIx = props.currentStep ? props.currentStep.sortedIndices : null;
+  const sortedIx = props.currentStep ? props.currentStep.sortedIndicies : null;
 
   const width = 100 / items.length; // in percent
 
