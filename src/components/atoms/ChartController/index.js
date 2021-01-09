@@ -6,7 +6,39 @@ import "./style.css";
 import { AnimationControl } from "../../molecules/AnimationControl";
 
 export const ChartController = (props) => {
-  console.log("CHARTS PROPS: ", props);
+  const [originalNumbers, setOriginalNumbers] = useState([...props.numbers]);
+  const [stepIndex, setStepIndex] = useState(0);
+  const [currentNumbers, setCurrentNumbers] = useState(props.numbers);
+
+  useEffect(() => {
+    setOriginalNumbers([...props.numbers]);
+    setCurrentNumbers(props.numbers);
+  }, [props.numbers]);
+  let counter = 0;
+
+  let interval = null;
+  const play = () => {};
+
+  useEffect(() => {
+    if (props.steps.length > 0) {
+      interval = setInterval(() => {
+        counter++;
+        setStepIndex(counter);
+      }, 250);
+    }
+  }, [props.steps]);
+
+  useEffect(() => {
+    if (props.steps.length > 0) {
+      if (stepIndex < props.steps.length) {
+        let currentstep = props.steps[stepIndex];
+
+        setCurrentNumbers(currentstep.numbers);
+      } else {
+        clearInterval(interval);
+      }
+    }
+  }, [stepIndex]);
 
   const onPlayClick = (e) => {
     console.log("play");
@@ -21,7 +53,7 @@ export const ChartController = (props) => {
   return (
     <>
       <Backdrop>
-        <Chart numbers={props.numbers} />
+        <Chart numbers={currentNumbers} currentStep={props.steps[stepIndex]} />
       </Backdrop>
 
       <AnimationControl

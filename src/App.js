@@ -12,7 +12,6 @@ import { useEffect, useState } from "react";
 
 export const App = (props) => {
   const ALGORITHM = ["Bubble Sort"];
-  const ALGO = { "Bubble Sort": BubbleSort };
 
   const [algorithm, setAlgorithm] = useState(null);
   const [arraySize, setArraySize] = useState(10);
@@ -21,13 +20,8 @@ export const App = (props) => {
 
   //RUN ON START
   useEffect(() => {
-    console.log("COMPONENT DID MOUNT, CALLING RANDOM NUMBER GEN");
     generateRandomArray();
   }, []);
-
-  useEffect(() => {
-    console.log("Numbers changed: ", numbers);
-  }, [numbers]);
 
   //RUN WHEN ARRAY SIZE CHANGES
   useEffect(() => {
@@ -52,18 +46,8 @@ export const App = (props) => {
   };
 
   const handleAlgorithmChange = (algorithmName) => {
-    console.log("HANDLE AGLORITHM CHANGE CALLED");
     setAlgorithm(algorithmName);
-    setSteps([
-      {
-        numbers: [],
-        colorGroup1: [],
-        colorGroup2: [],
-        colorGroup3: [],
-        colorGroup4: [],
-        colorGroup5: [],
-      },
-    ]);
+    setSteps([]);
   };
 
   //TODO: should be configurable what max array size is
@@ -76,8 +60,8 @@ export const App = (props) => {
 
   const createNewStepHistory = () => {
     const sort = BubbleSort;
-    if (sort) {
-      const allSteps = sort(numbers);
+    if (sort && numbers.length > 0) {
+      const allSteps = sort([...numbers]); //copy numbers, otherwise will sort right away
       setSteps(allSteps);
     }
   };
@@ -92,7 +76,7 @@ export const App = (props) => {
         onRandom={() => {}}
       />
 
-      <ChartController numbers={numbers} />
+      <ChartController numbers={numbers} steps={steps} />
     </div>
   );
 };

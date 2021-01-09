@@ -4,18 +4,17 @@ import "./style.css";
 const generateBars = (props) => {
   const numbers = props.numbers;
   if (!numbers || numbers.length === 0) return;
-  console.log("NUMBERS ", numbers);
   const items = numbers;
   const max = Math.max(...items);
-  console.log("MAX VALUE: ", max);
-  const colA = props.colorGroup1;
-  const colB = props.colorGroup2;
-  const colC = props.colorGroup3;
-  const colD = props.colorGroup4;
-  const sortedIx = props.sortedIndices;
+  const colA = props.currentStep ? props.currentStep.colorGroup1 : null;
+  const colB = props.currentStep ? props.currentStep.colorGroup2 : null;
+  const colC = props.currentStep ? props.currentStep.colorGroup3 : null;
+  const colD = props.currentStep ? props.currentStep.colorGroup4 : null;
+  const sortedIx = props.currentStep ? props.currentStep.sortedIndices : null;
 
   const width = 100 / items.length; // in percent
 
+  //console.log("COLS: ", colA, colB, colC, colD);
   const result = items.map((item, index) => {
     const height = (item / max) * 100; //in percent
 
@@ -31,7 +30,7 @@ const generateBars = (props) => {
         width={width}
         height={height}
         key={`${index}_${item}`}
-        colors={(stateA, stateB, stateC, stateD)}
+        colors={{ stateA, stateB, stateC, stateD }}
         sorted={sorted}
       />
     );
@@ -39,24 +38,12 @@ const generateBars = (props) => {
   return result;
 };
 
-export const Chart = ({
-  numbers,
-  colorGroup1,
-  colorGroup2,
-  colorGroup3,
-  colorGroup4,
-  sortedIndices,
-}) => {
-  console.log("CHART: ", numbers);
+export const Chart = ({ numbers, currentStep }) => {
   return (
     <>
       {generateBars({
         numbers,
-        colorGroup2,
-        colorGroup3,
-        colorGroup4,
-        colorGroup1,
-        sortedIndices,
+        currentStep,
       })}
     </>
   );
