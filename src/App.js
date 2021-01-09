@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { NavigationBar } from "./components/molecules/NavigationBar";
-import { Charts } from "./components/atoms/Charts";
+import { ChartController } from "./components/atoms/ChartController";
 
 import BubbleSort, {
   BubbleSortActions,
@@ -17,7 +17,7 @@ export const App = (props) => {
   const [algorithm, setAlgorithm] = useState(null);
   const [arraySize, setArraySize] = useState(10);
   const [steps, setSteps] = useState([]);
-  const [numbers, setNumbers] = useState(null);
+  const [numbers, setNumbers] = useState([]);
 
   //RUN ON START
   useEffect(() => {
@@ -81,7 +81,6 @@ export const App = (props) => {
       setSteps(allSteps);
     }
   };
-
   return (
     <div className="App container-col container-items-center">
       <NavigationBar
@@ -93,7 +92,7 @@ export const App = (props) => {
         onRandom={() => {}}
       />
 
-      <Charts numbers={numbers} steps={steps} />
+      <ChartController numbers={numbers} />
     </div>
   );
 };
