@@ -14,13 +14,13 @@
 .bar-color-2 {
   background-color: purple;
 }
+.bar.sorted {
+  background-color: red;
+}
 .bar:last-child {
   margin-right: 0;
 }
 
-.bar.sorted {
-  background-color: red;
-}
 .bar > .bar-value {
 }
 .bar:hover {

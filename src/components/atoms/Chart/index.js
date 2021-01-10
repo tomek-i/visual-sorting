@@ -14,7 +14,6 @@ const generateBars = (props) => {
 
   const width = 100 / items.length; // in percent
 
-  //console.log("COLS: ", colA, colB, colC, colD);
   const result = items.map((item, index) => {
     const height = (item / max) * 100; //in percent
 
