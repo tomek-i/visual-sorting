@@ -10,6 +10,7 @@ export const NavigationBar = ({
   arraySizes,
   onArrayChange,
   onAlgorithmChange,
+  onRandom,
 }) => {
   return (
     <nav className={"navbar"}>
@@ -22,6 +23,7 @@ export const NavigationBar = ({
         arraySizes={arraySizes}
         onArrayChange={onArrayChange}
         onAlgorithmChange={onAlgorithmChange}
+        onRandom={onRandom}
       />
     </nav>
   );

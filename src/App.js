@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import { NavigationBar } from "./components/molecules/NavigationBar";
 import { ChartController } from "./components/atoms/ChartController";
+import * as Constants from "./constants";
 
 import BubbleSort, {
   BubbleSortActions,
@@ -14,7 +15,7 @@ export const App = (props) => {
   const ALGORITHM = ["Bubble Sort"];
 
   const [algorithm, setAlgorithm] = useState(null);
-  const [arraySize, setArraySize] = useState(10);
+  const [arraySize, setArraySize] = useState(Constants.MIN_ARRAY_SIZE);
   const [steps, setSteps] = useState([]);
   const [numbers, setNumbers] = useState([]);
 
@@ -32,6 +33,7 @@ export const App = (props) => {
     createNewStepHistory();
   }, [algorithm]);
 
+  //TODO: move to util functions
   const generateRandomArray = () => {
     // Generate pseudo-random number between 1 and max
     function getRandomInt(max) {
@@ -50,11 +52,11 @@ export const App = (props) => {
     setSteps([]);
   };
 
-  //TODO: should be configurable what max array size is
+  //TODO: move to util function
   const handleArraySizeChange = (size) => {
     size = Number(size);
-    size = size > 100 ? 100 : size;
-    size = size < 0 ? 0 : size;
+    size = size > Constants.MAX_ARRAY_SIZE ? Constants.MAX_ARRAY_SIZE : size;
+    size = size < Constants.MIN_ARRAY_SIZE ? Constants.MIN_ARRAY_SIZE : size;
     setArraySize(size);
   };
 
@@ -70,10 +72,12 @@ export const App = (props) => {
       <NavigationBar
         items={ALGORITHM}
         logo={logo}
-        arraySizes={[5, 10, 25, 50, 100]}
+        arraySizes={Constants.ARRAY_SIZE_SELECTION}
         onArrayChange={handleArraySizeChange}
         onAlgorithmChange={handleAlgorithmChange}
-        onRandom={() => {}}
+        onRandom={() => {
+          generateRandomArray();
+        }}
       />
 
       <ChartController numbers={numbers} steps={steps} />

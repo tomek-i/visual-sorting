@@ -21,7 +21,7 @@ export const MainControl = (props) => {
           props.onArrayChange(item);
         }}
       />
-      <Button text="Randomize" />
+      <Button text="Randomize" onClick={props.onRandom} />
     </section>
   );
 };
