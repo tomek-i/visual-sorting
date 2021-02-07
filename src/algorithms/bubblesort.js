@@ -5,7 +5,7 @@ import {
   lastSorted,
   setActionNames,
   swap,
-} from "../utill";
+} from "../util";
 
 const BubbleSort = (numbers) => {
   if (!numbers) return;
